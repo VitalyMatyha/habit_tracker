@@ -2,6 +2,7 @@ from pathlib import Path
 from datetime import timedelta
 import os
 from dotenv import load_dotenv
+from celery.schedules import crontab
 
 load_dotenv()
 
@@ -120,3 +121,11 @@ CELERY_TIMEZONE = TIME_ZONE
 
 # Telegram
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+
+
+CELERY_BEAT_SCHEDULE = {
+    "send-habit-reminders-every-minute": {
+        "task": "telegram_bot.tasks.send_habit_reminders",
+        "schedule": crontab(minute="*"),  # каждую минуту
+    },
+}
