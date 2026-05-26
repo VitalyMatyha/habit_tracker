@@ -3,19 +3,24 @@
 venv/
 env/
 
-# Environment variables (секреты — никогда не в git!)
+# Environment variables
 .env
 
 # Python cache
 __pycache__/
 *.py[cod]
 *.pyo
+*.pyd
 
 # Django
 *.log
 local_settings.py
 db.sqlite3
 media/
+staticfiles/
+
+# Migrations (опционально, многие оставляют)
+# */migrations/
 
 # PyCharm
 .idea/
@@ -30,3 +35,11 @@ htmlcov/
 
 # Pytest
 .pytest_cache/
+
+# Docker
+*.env.local
+
+# Distribution
+dist/
+build/
+*.egg-info/
