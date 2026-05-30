@@ -129,3 +129,5 @@ CELERY_BEAT_SCHEDULE = {
         "schedule": crontab(minute="*"),  # каждую минуту
     },
 }
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
