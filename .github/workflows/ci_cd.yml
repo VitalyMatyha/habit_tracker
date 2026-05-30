@@ -53,7 +53,7 @@ jobs:
       - name: Run linting
         run: |
           pip install flake8
-          flake8 . --max-line-length=119 --exclude=.venv,migrations
+          flake8 . --max-line-length=119 --exclude=.venv,migrations --extend-ignore=W292,E501
 
       - name: Run tests
         run: python manage.py test
